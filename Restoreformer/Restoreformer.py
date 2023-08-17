@@ -3,12 +3,8 @@ import cv2
 import onnxruntime
 import numpy as np
 
-# gfpgan converted to onnx
-# using https://github.com/xuanandsix/GFPGAN-onnxruntime-demo
-# same inference code for GFPGANv1.2, GFPGANv1.3, GFPGANv1.4
-
-class GFPGAN:
-    def __init__(self, model_path="GFPGANv1.4.onnx", device='cpu'):
+class RestoreFormer:
+    def __init__(self, model_path="restoreformer.onnx", device='cpu'):
         session_options = onnxruntime.SessionOptions()
         session_options.graph_optimization_level = onnxruntime.GraphOptimizationLevel.ORT_ENABLE_ALL
         providers = ["CPUExecutionProvider"]
